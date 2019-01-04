@@ -30,7 +30,7 @@ class Carousel {
         // smoothly
         ev.target.parentNode.scrollTo({
             top: 0,
-            left: ev.target.offsetLeft - window.innerWidth / 2 + ev.target.clientWidth / 2,
+            left: ev.target.offsetLeft - ev.target.parentNode.clientWidth / 2 + ev.target.clientWidth / 2,
             behavior: "smooth"
         });
 
@@ -48,7 +48,7 @@ class Carousel {
 
 
 // just for the example
-document.addEventListener("DOMContentLoaded", () => {
+function simpleCarouselMain() {
     
     // let els be the group of div that should became a carousel
     let els = document.querySelectorAll(".sc-container");
@@ -58,4 +58,4 @@ document.addEventListener("DOMContentLoaded", () => {
         // a carousel istance is created 
         new Carousel(el);
     }
-});
+}
