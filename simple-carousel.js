@@ -34,6 +34,7 @@ class Carousel {
             behavior: "smooth"
         });
 
+
         // the current selected element of the carousel is not more the current selected element
         // (It iterate through all the .current element, but it should be just one element)
         ev.target.parentNode.querySelectorAll(".current").forEach(curr => {
@@ -48,7 +49,7 @@ class Carousel {
 
 
 // just for the example
-function simpleCarouselMain() {
+document.addEventListener("DOMContentLoaded", () => {
     
     // let els be the group of div that should became a carousel
     let els = document.querySelectorAll(".sc-container");
@@ -58,4 +59,4 @@ function simpleCarouselMain() {
         // a carousel istance is created 
         new Carousel(el);
     }
-}
+});
