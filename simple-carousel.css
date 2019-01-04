@@ -1,0 +1,46 @@
+.sc-container {
+    overflow-y: hidden; 
+    overflow-x: auto;
+    width: calc( 100vw - 200px * 2 );
+    height: 400px;
+    padding: 200px;
+    white-space: nowrap;
+    position: relative;
+}
+
+.sc-container::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+}
+
+.sc-child {
+    width: 300px;
+    height: 400px;
+    display: inline-block;
+    background-image: linear-gradient(to bottom right, aqua, fuchsia);
+    transition-duration: .5s;
+    transform-origin: center;
+    z-index: 2;
+    position: relative;
+}
+
+.sc-child:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    z-index: 3;
+}
+
+.sc-child.current {
+    transform: scale(1.6);
+    z-index: 4;
+}
+.sc-child.current:hover {
+    cursor: default;
+}
+
