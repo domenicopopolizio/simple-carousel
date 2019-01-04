@@ -1,24 +1,26 @@
+/* carousel container */
 .sc-container {
-    overflow-y: hidden; 
+    overflow-y: hidden;
     overflow-x: auto;
-    width: calc( 100vw - 200px * 2 );
+    width: calc(100vw - 200px * 2);
     height: 400px;
     padding: 200px;
     white-space: nowrap;
     position: relative;
 }
 
+/* delete scrollbar */
 .sc-container::-webkit-scrollbar {
     display: none;
 }
 
-html {
-    scroll-behavior: smooth;
-}
+/* that's just for the example */
+
 body {
     margin: 0;
 }
 
+/* element on the carousel (width and eight can be actually set to auto if needed */
 .sc-child {
     width: 300px;
     height: 400px;
@@ -30,17 +32,22 @@ body {
     position: relative;
 }
 
+/* little zoom on hover, and pointer cursor, because it's clickable */
 .sc-child:hover {
     cursor: pointer;
     transform: scale(1.2);
     z-index: 3;
 }
 
+/* the current child is really zoomed (and it can be incremented, but you've to change the padding of
+sc-container (7th row) */
 .sc-child.current {
     transform: scale(1.6);
     z-index: 4;
 }
+
+/* in spite of it's clickable, if you click on it, nothing will happen (apparently) so the cursor is not 
+a pointer, but the default arrow is better */
 .sc-child.current:hover {
     cursor: default;
 }
-
